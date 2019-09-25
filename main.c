@@ -1,6 +1,6 @@
-#include "spell.c"
+
 #include "dictionary.h"
-#include "dictionary.c"
+
 
 
 int main(int argc, char* argv[])
@@ -19,8 +19,8 @@ int main(int argc, char* argv[])
 	 for (int i = 0; i < num_misspelled; i++)
 	 {
              printf("%s \n", misspelled[i]);
-          
+
 	 }
-		 
+
          return 1;
 }
