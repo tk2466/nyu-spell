@@ -4,7 +4,6 @@
 #include <string.h>
 #include <ctype.h>
 #include "dictionary.h"
-//#include <dictionary.c>
 #define IS_CTRL  (1 << 0)
 #define IS_EXT	 (1 << 1)
 #define IS_ALPHA (1 << 2)
@@ -14,17 +13,17 @@ unsigned int char_tbl[256] = {0};
 
 void init_table()
 {
-	int i;
+	//int i;
 
-	for (i = 0; i < 32; i++) char_tbl[i] |= IS_CTRL;
+	for (int i = 0; i < 32; i++) char_tbl[i] |= IS_CTRL;
 	char_tbl[127] |= IS_CTRL;
 
-	for (i = 'A'; i <= 'Z'; i++) {
+	for (int i = 'A'; i <= 'Z'; i++) {
 		char_tbl[i] |= IS_ALPHA;
 		char_tbl[i + 0x20] |= IS_ALPHA; /* lower case */
 	}
 
-	for (i = 128; i < 256; i++) char_tbl[i] |= IS_EXT;
+	for (int i = 128; i < 256; i++) char_tbl[i] |= IS_EXT;
 }
 
 void strip(char * str, int what)
@@ -59,8 +58,8 @@ int isLetter(char c){
 }
 
 void removePunc(char article[]){
-    int i, j=0;
-    for ( i =0; article[i] != 0; i++){
+    int j=0;
+    for ( int i =0; article[i] != 0; i++){
         if (isLetter(article[i])){
             article[j] = article[i];
             j++;
@@ -72,7 +71,7 @@ void removePunc(char article[]){
     }
 }
 void toLower( char article[]){
-    int i=0;
+    //int i=0;
     for( int i=0; article[i] != 0; i++){
         if ( article[i] >= 'A' && article[i] <='Z')
             article[i] = article[i] + 32;
