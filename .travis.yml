@@ -7,5 +7,4 @@ script:
  - make spell.o
  - make test.o
  - make main.o
- - make 
  - make test
