@@ -1,0 +1,272 @@
+root@appsec-VirtualBox:/home/appsec/shared# valgrind --leak-check=full ./test_main
+==25777== Memcheck, a memory error detector
+==25777== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==25777== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==25777== Command: ./test_main
+==25777== 
+Running suite(s): check_word
+==25778== Conditional jump or move depends on uninitialised value(s)
+==25778==    at 0x10A2B5: removePunc (in /home/appsec/shared/test_main)
+==25778==    by 0x10A609: check_word (in /home/appsec/shared/test_main)
+==25778==    by 0x109D8C: test_check_word_normal (in /home/appsec/shared/test_main)
+==25778==    by 0x10D5A5: srunner_run (in /home/appsec/shared/test_main)
+==25778==    by 0x10A00D: main (in /home/appsec/shared/test_main)
+==25778== 
+==25778== Conditional jump or move depends on uninitialised value(s)
+==25778==    at 0x10A331: toLower (in /home/appsec/shared/test_main)
+==25778==    by 0x10A615: check_word (in /home/appsec/shared/test_main)
+==25778==    by 0x109D8C: test_check_word_normal (in /home/appsec/shared/test_main)
+==25778==    by 0x10D5A5: srunner_run (in /home/appsec/shared/test_main)
+==25778==    by 0x10A00D: main (in /home/appsec/shared/test_main)
+==25778== 
+==25778== Conditional jump or move depends on uninitialised value(s)
+==25778==    at 0x10A2B5: removePunc (in /home/appsec/shared/test_main)
+==25778==    by 0x10A609: check_word (in /home/appsec/shared/test_main)
+==25778==    by 0x109DBA: test_check_word_normal (in /home/appsec/shared/test_main)
+==25778==    by 0x10D5A5: srunner_run (in /home/appsec/shared/test_main)
+==25778==    by 0x10A00D: main (in /home/appsec/shared/test_main)
+==25778== 
+==25778== Conditional jump or move depends on uninitialised value(s)
+==25778==    at 0x10A331: toLower (in /home/appsec/shared/test_main)
+==25778==    by 0x10A615: check_word (in /home/appsec/shared/test_main)
+==25778==    by 0x109DBA: test_check_word_normal (in /home/appsec/shared/test_main)
+==25778==    by 0x10D5A5: srunner_run (in /home/appsec/shared/test_main)
+==25778==    by 0x10A00D: main (in /home/appsec/shared/test_main)
+==25778== 
+==25778== 
+==25778== HEAP SUMMARY:
+==25778==     in use at exit: 6,896,528 bytes in 123,158 blocks
+==25778==   total heap usage: 123,173 allocs, 15 frees, 6,914,633 bytes allocated
+==25778== 
+==25778== 10,248 bytes in 183 blocks are definitely lost in loss record 28 of 31
+==25778==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==25778==    by 0x10A7FB: load_dictionary (in /home/appsec/shared/test_main)
+==25778==    by 0x109D57: test_check_word_normal (in /home/appsec/shared/test_main)
+==25778==    by 0x10D5A5: srunner_run (in /home/appsec/shared/test_main)
+==25778==    by 0x10A00D: main (in /home/appsec/shared/test_main)
+==25778== 
+==25778== 6,885,088 (97,552 direct, 6,787,536 indirect) bytes in 1,742 blocks are definitely lost in loss record 31 of 31
+==25778==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==25778==    by 0x10A870: load_dictionary (in /home/appsec/shared/test_main)
+==25778==    by 0x109D57: test_check_word_normal (in /home/appsec/shared/test_main)
+==25778==    by 0x10D5A5: srunner_run (in /home/appsec/shared/test_main)
+==25778==    by 0x10A00D: main (in /home/appsec/shared/test_main)
+==25778== 
+==25778== LEAK SUMMARY:
+==25778==    definitely lost: 107,800 bytes in 1,925 blocks
+==25778==    indirectly lost: 6,787,536 bytes in 121,206 blocks
+==25778==      possibly lost: 0 bytes in 0 blocks
+==25778==    still reachable: 1,192 bytes in 27 blocks
+==25778==         suppressed: 0 bytes in 0 blocks
+==25778== Reachable blocks (those to which a pointer was found) are not shown.
+==25778== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==25778== 
+==25778== For counts of detected and suppressed errors, rerun with: -v
+==25778== Use --track-origins=yes to see where uninitialised values come from
+==25778== ERROR SUMMARY: 6 errors from 6 contexts (suppressed: 0 from 0)
+==25779== Invalid read of size 1
+==25779==    at 0x4C33DA3: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==25779==    by 0x10A65E: check_word (in /home/appsec/shared/test_main)
+==25779==    by 0x6161616161616160: ???
+==25779==    by 0x6161616161616160: ???
+==25779==    by 0x6161616161616160: ???
+==25779==    by 0x6161616161616160: ???
+==25779==    by 0x6161616161616160: ???
+==25779==    by 0x6161616161616160: ???
+==25779==    by 0x6161616161616160: ???
+==25779==    by 0x6161616161616160: ???
+==25779==    by 0x6161616161616160: ???
+==25779==    by 0x6161616161616160: ???
+==25779==  Address 0x6161616161616161 is not stack'd, malloc'd or (recently) free'd
+==25779== 
+==25779== 
+==25779== Process terminating with default action of signal 11 (SIGSEGV)
+==25779==  General Protection Fault
+==25779==    at 0x4C33DA3: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==25779==    by 0x10A65E: check_word (in /home/appsec/shared/test_main)
+==25779==    by 0x6161616161616160: ???
+==25779==    by 0x6161616161616160: ???
+==25779==    by 0x6161616161616160: ???
+==25779==    by 0x6161616161616160: ???
+==25779==    by 0x6161616161616160: ???
+==25779==    by 0x6161616161616160: ???
+==25779==    by 0x6161616161616160: ???
+==25779==    by 0x6161616161616160: ???
+==25779==    by 0x6161616161616160: ???
+==25779==    by 0x6161616161616160: ???
+==25779== 
+==25779== HEAP SUMMARY:
+==25779==     in use at exit: 6,896,603 bytes in 123,161 blocks
+==25779==   total heap usage: 123,182 allocs, 21 frees, 6,931,790 bytes allocated
+==25779== 
+==25779== 10,248 bytes in 183 blocks are definitely lost in loss record 31 of 34
+==25779==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==25779==    by 0x10A7FB: load_dictionary (in /home/appsec/shared/test_main)
+==25779==    by 0x109E8B: test_check_word_buffer_overflow (in /home/appsec/shared/test_main)
+==25779==    by 0x10D5A5: srunner_run (in /home/appsec/shared/test_main)
+==25779==    by 0x10A00D: main (in /home/appsec/shared/test_main)
+==25779== 
+==25779== 6,885,088 (97,552 direct, 6,787,536 indirect) bytes in 1,742 blocks are definitely lost in loss record 34 of 34
+==25779==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==25779==    by 0x10A870: load_dictionary (in /home/appsec/shared/test_main)
+==25779==    by 0x109E8B: test_check_word_buffer_overflow (in /home/appsec/shared/test_main)
+==25779==    by 0x10D5A5: srunner_run (in /home/appsec/shared/test_main)
+==25779==    by 0x10A00D: main (in /home/appsec/shared/test_main)
+==25779== 
+==25779== LEAK SUMMARY:
+==25779==    definitely lost: 107,800 bytes in 1,925 blocks
+==25779==    indirectly lost: 6,787,536 bytes in 121,206 blocks
+==25779==      possibly lost: 0 bytes in 0 blocks
+==25779==    still reachable: 1,267 bytes in 30 blocks
+==25779==         suppressed: 0 bytes in 0 blocks
+==25779== Reachable blocks (those to which a pointer was found) are not shown.
+==25779== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==25779== 
+==25779== For counts of detected and suppressed errors, rerun with: -v
+==25779== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)
+50%: Checks: 2, Failures: 0, Errors: 1
+test_main.c:18:E:Core:test_check_word_buffer_overflow:0: (after this point) Test timeout expired
+==25777== 
+==25777== HEAP SUMMARY:
+==25777==     in use at exit: 0 bytes in 0 blocks
+==25777==   total heap usage: 57 allocs, 57 frees, 36,963 bytes allocated
+==25777== 
+==25777== All heap blocks were freed -- no leaks are possible
+==25777== 
+==25777== For counts of detected and suppressed errors, rerun with: -v
+==25777== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+root@appsec-VirtualBox:/home/appsec/shared# valgrind --leak-check=full ./test_main > valgrind.out
+==25782== Memcheck, a memory error detector
+==25782== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==25782== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==25782== Command: ./test_main
+==25782== 
+==25783== Conditional jump or move depends on uninitialised value(s)
+==25783==    at 0x10A2B5: removePunc (in /home/appsec/shared/test_main)
+==25783==    by 0x10A609: check_word (in /home/appsec/shared/test_main)
+==25783==    by 0x109D8C: test_check_word_normal (in /home/appsec/shared/test_main)
+==25783==    by 0x10D5A5: srunner_run (in /home/appsec/shared/test_main)
+==25783==    by 0x10A00D: main (in /home/appsec/shared/test_main)
+==25783== 
+==25783== Conditional jump or move depends on uninitialised value(s)
+==25783==    at 0x10A331: toLower (in /home/appsec/shared/test_main)
+==25783==    by 0x10A615: check_word (in /home/appsec/shared/test_main)
+==25783==    by 0x109D8C: test_check_word_normal (in /home/appsec/shared/test_main)
+==25783==    by 0x10D5A5: srunner_run (in /home/appsec/shared/test_main)
+==25783==    by 0x10A00D: main (in /home/appsec/shared/test_main)
+==25783== 
+==25783== Conditional jump or move depends on uninitialised value(s)
+==25783==    at 0x10A2B5: removePunc (in /home/appsec/shared/test_main)
+==25783==    by 0x10A609: check_word (in /home/appsec/shared/test_main)
+==25783==    by 0x109DBA: test_check_word_normal (in /home/appsec/shared/test_main)
+==25783==    by 0x10D5A5: srunner_run (in /home/appsec/shared/test_main)
+==25783==    by 0x10A00D: main (in /home/appsec/shared/test_main)
+==25783== 
+==25783== Conditional jump or move depends on uninitialised value(s)
+==25783==    at 0x10A331: toLower (in /home/appsec/shared/test_main)
+==25783==    by 0x10A615: check_word (in /home/appsec/shared/test_main)
+==25783==    by 0x109DBA: test_check_word_normal (in /home/appsec/shared/test_main)
+==25783==    by 0x10D5A5: srunner_run (in /home/appsec/shared/test_main)
+==25783==    by 0x10A00D: main (in /home/appsec/shared/test_main)
+==25783== 
+==25783== 
+==25783== HEAP SUMMARY:
+==25783==     in use at exit: 6,896,528 bytes in 123,158 blocks
+==25783==   total heap usage: 123,173 allocs, 15 frees, 6,921,801 bytes allocated
+==25783== 
+==25783== 10,248 bytes in 183 blocks are definitely lost in loss record 28 of 31
+==25783==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==25783==    by 0x10A7FB: load_dictionary (in /home/appsec/shared/test_main)
+==25783==    by 0x109D57: test_check_word_normal (in /home/appsec/shared/test_main)
+==25783==    by 0x10D5A5: srunner_run (in /home/appsec/shared/test_main)
+==25783==    by 0x10A00D: main (in /home/appsec/shared/test_main)
+==25783== 
+==25783== 6,885,088 (97,552 direct, 6,787,536 indirect) bytes in 1,742 blocks are definitely lost in loss record 31 of 31
+==25783==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==25783==    by 0x10A870: load_dictionary (in /home/appsec/shared/test_main)
+==25783==    by 0x109D57: test_check_word_normal (in /home/appsec/shared/test_main)
+==25783==    by 0x10D5A5: srunner_run (in /home/appsec/shared/test_main)
+==25783==    by 0x10A00D: main (in /home/appsec/shared/test_main)
+==25783== 
+==25783== LEAK SUMMARY:
+==25783==    definitely lost: 107,800 bytes in 1,925 blocks
+==25783==    indirectly lost: 6,787,536 bytes in 121,206 blocks
+==25783==      possibly lost: 0 bytes in 0 blocks
+==25783==    still reachable: 1,192 bytes in 27 blocks
+==25783==         suppressed: 0 bytes in 0 blocks
+==25783== Reachable blocks (those to which a pointer was found) are not shown.
+==25783== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==25783== 
+==25783== For counts of detected and suppressed errors, rerun with: -v
+==25783== Use --track-origins=yes to see where uninitialised values come from
+==25783== ERROR SUMMARY: 6 errors from 6 contexts (suppressed: 0 from 0)
+==25784== Invalid read of size 1
+==25784==    at 0x4C33DA3: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==25784==    by 0x10A65E: check_word (in /home/appsec/shared/test_main)
+==25784==    by 0x6161616161616160: ???
+==25784==    by 0x6161616161616160: ???
+==25784==    by 0x6161616161616160: ???
+==25784==    by 0x6161616161616160: ???
+==25784==    by 0x6161616161616160: ???
+==25784==    by 0x6161616161616160: ???
+==25784==    by 0x6161616161616160: ???
+==25784==    by 0x6161616161616160: ???
+==25784==    by 0x6161616161616160: ???
+==25784==    by 0x6161616161616160: ???
+==25784==  Address 0x6161616161616161 is not stack'd, malloc'd or (recently) free'd
+==25784== 
+==25784== 
+==25784== Process terminating with default action of signal 11 (SIGSEGV)
+==25784==  General Protection Fault
+==25784==    at 0x4C33DA3: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==25784==    by 0x10A65E: check_word (in /home/appsec/shared/test_main)
+==25784==    by 0x6161616161616160: ???
+==25784==    by 0x6161616161616160: ???
+==25784==    by 0x6161616161616160: ???
+==25784==    by 0x6161616161616160: ???
+==25784==    by 0x6161616161616160: ???
+==25784==    by 0x6161616161616160: ???
+==25784==    by 0x6161616161616160: ???
+==25784==    by 0x6161616161616160: ???
+==25784==    by 0x6161616161616160: ???
+==25784==    by 0x6161616161616160: ???
+==25784== 
+==25784== HEAP SUMMARY:
+==25784==     in use at exit: 6,896,603 bytes in 123,161 blocks
+==25784==   total heap usage: 123,182 allocs, 21 frees, 6,938,958 bytes allocated
+==25784== 
+==25784== 10,248 bytes in 183 blocks are definitely lost in loss record 31 of 34
+==25784==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==25784==    by 0x10A7FB: load_dictionary (in /home/appsec/shared/test_main)
+==25784==    by 0x109E8B: test_check_word_buffer_overflow (in /home/appsec/shared/test_main)
+==25784==    by 0x10D5A5: srunner_run (in /home/appsec/shared/test_main)
+==25784==    by 0x10A00D: main (in /home/appsec/shared/test_main)
+==25784== 
+==25784== 6,885,088 (97,552 direct, 6,787,536 indirect) bytes in 1,742 blocks are definitely lost in loss record 34 of 34
+==25784==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==25784==    by 0x10A870: load_dictionary (in /home/appsec/shared/test_main)
+==25784==    by 0x109E8B: test_check_word_buffer_overflow (in /home/appsec/shared/test_main)
+==25784==    by 0x10D5A5: srunner_run (in /home/appsec/shared/test_main)
+==25784==    by 0x10A00D: main (in /home/appsec/shared/test_main)
+==25784== 
+==25784== LEAK SUMMARY:
+==25784==    definitely lost: 107,800 bytes in 1,925 blocks
+==25784==    indirectly lost: 6,787,536 bytes in 121,206 blocks
+==25784==      possibly lost: 0 bytes in 0 blocks
+==25784==    still reachable: 1,267 bytes in 30 blocks
+==25784==         suppressed: 0 bytes in 0 blocks
+==25784== Reachable blocks (those to which a pointer was found) are not shown.
+==25784== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==25784== 
+==25784== For counts of detected and suppressed errors, rerun with: -v
+==25784== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)
+==25782== 
+==25782== HEAP SUMMARY:
+==25782==     in use at exit: 0 bytes in 0 blocks
+==25782==   total heap usage: 58 allocs, 58 frees, 44,247 bytes allocated
+==25782== 
+==25782== All heap blocks were freed -- no leaks are possible
+==25782== 
+==25782== For counts of detected and suppressed errors, rerun with: -v
+==25782== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
