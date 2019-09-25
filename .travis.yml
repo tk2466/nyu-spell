@@ -3,4 +3,9 @@ compiler: gcc
 script: 
  - sudo apt-get update
  - sudo apt-get install check
+ - make dictionary.o
+ - make spell.o
+ - make test.o
+ - make main.o
+ - make 
  - make test
