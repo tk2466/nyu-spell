@@ -71,7 +71,7 @@ void removePunc(char article[]){
     }
 }
 void toLower( char article[]){
-    //int i=0;
+
     for( int i=0; article[i] != 0; i++){
         if ( article[i] >= 'A' && article[i] <='Z')
             article[i] = article[i] + 32;
@@ -80,7 +80,7 @@ void toLower( char article[]){
 
 int check_words(FILE* fp, hashmap_t hashtable[], char* misspelled[])
 {
-    int num_misspelled = 0;
+  int num_misspelled = 0;
   int wordlength = 0;
   int newlength = 0;
   char c = '\0';
@@ -118,7 +118,7 @@ int check_words(FILE* fp, hashmap_t hashtable[], char* misspelled[])
 
      }
 
-       strip(word, IS_CTRL);
+       //strip(word, IS_CTRL);
        wordlength = strlen(word);
        newlength = wordlength;
        source = 0;
@@ -203,7 +203,7 @@ bool check_word(const char* word, hashmap_t hashtable[])
 bool load_dictionary(const char* dictionary_file, hashmap_t hashtable[])
 {
 
-    char row[LENGTH+1];
+  char row[LENGTH+1];
   FILE *wordlist = fopen(dictionary_file, "r");
   char word[LENGTH+1];
   for (int i = 0; i < HASH_SIZE; i++) hashtable[i] = NULL;
